@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>K-Festa</title>
+<style>
+    div img {
+        width: 100%;
+    }
+    .portfolio-wrap svg.bi-cart3 {
+        background : none;
+        border: none;
+        display: inline;
+        position: relative;
+        bottom: 70px;
+        float: right;
+    }
+    li.page-item.disabled a.page-link{
+        border: 1px solid #EF6480 ;
+        text-decoration: none;
+        color: grey;
+    }
+    a.page-link {
+        border: 1px solid#EF6480 ;
+        text-decoration: none;
+        color: grey;
+    }
+    a.page-link:hover {
+        border: 1px solid #EF6480 ;
+        text-decoration: none;
+        background-color: #EF6480;
+        color: #fff;
+    }
+    .store-nav {
+        margin: 0% 25% 0% 25%;
+        border-bottom: 1px dotted grey;
+    }
+    .store-nav .nav-link{
+        text-decoration: none;
+        color: grey;
+        font-size: 1.3em;
+    }
+    .store-nav .nav-link:hover {
+        background-color:#EF6480 ;
+        color: #ffffff;
+    }
+    .store-nav .nav-link.active {
+        text-decoration: noen;
+        padding: 8px;
+        vertical-align: center;
+        font-size: 1.3em;
+        background-color: grey;
+        color: #ffffff;
+    }
+</style>
+
+</style>
+
+</head>
+<body>
+
+<nav class="navbar store-nav navbar-expand-lg">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
+      <ul class="navbar-nav">
+          {% if category.name == '문화예술' %}
+          <li><a class="nav-item nav-link active" href="{% url 'category_list' 100 %}">문화예술</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'category_list' 100 %}">문화예술</a></li>
+          {% endif %}
+          {% if category.name == '생활축제' %}
+          <li><a class="nav-item nav-link active" href="{% url 'category_list' 101 %}">생활축제</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'category_list' 101 %}">생활축제</a></li>
+          {% endif %}
+          {% if category.name == '지역특산물' %}
+          <li><a class="nav-item nav-link active" href="{% url 'category_list' 102 %}">지역특산물</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'category_list' 102 %}">지역특산물</a></li>
+          {% endif %}
+          {% if category.name == '환경축제' %}
+          <li><a class="nav-item nav-link active" href="{% url 'category_list' 103 %}v">환경축제</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'category_list' 103 %}">환경축제</a></li>
+          {% endif %}
+          {% if category.name == '생활축제' %}
+          <li><a class="nav-item nav-link active" href="{% url 'category_list' 104 %}">생활축제</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'category_list' 104 %}">생활축제</a></li>
+          {% endif %}
+          {% if category.name == '전통예술' %}
+          <li><a class="nav-item nav-link active" href="{% url 'category_list' 105 %}">전통예술</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'category_list' 105 %}">전통예술</a></li>
+          {% endif %}
+          {% if category.name == '생태자원' %}
+          <li><a class="nav-item nav-link active" href="{% url 'category_list' 106 %}">생태자원</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'category_list' 106 %}">생태자원</a></li>
+          {% endif %}
+
+      </ul>
+  </div>
+</nav>
+
+<div>
+    {% block content %}
+    {% endblock content %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a88b774f21.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ9vAF_GKMEXMxXjVxfSAw3C6trmbLgDc&callback=myMap"></script>
+</body>
+</html>
+
+
