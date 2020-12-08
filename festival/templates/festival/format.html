@@ -290,15 +290,20 @@ h3 {
   </button>
   <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo01">
       <ul class="navbar-nav">
-          {% if format.key == 'offline' %}
-          <li><a class="nav-item nav-link active" href="{% url 'format_list' offline %}">오프라인</a></li>
+          {% if format.key == 1 %}
+          <li><a class="nav-item nav-link active" href="{% url 'format_list' 1 %}">오프라인</a></li>
           {% else %}
-          <li><a class="nav-item nav-link" href="{% url 'format_list' offline %}">오프라인</a></li>
+          <li><a class="nav-item nav-link" href="{% url 'format_list' 1 %}">오프라인</a></li>
           {% endif %}
-          {% if format.key  == 'online' %}
-          <li><a class="nav-item nav-link active" href="{% url 'format_list' online %}">온라인</a></li>
+          {% if format.key  == 2 %}
+          <li><a class="nav-item nav-link active" href="{% url 'format_list' 2 %}">온라인</a></li>
           {% else %}
-          <li><a class="nav-item nav-link" href="{% url 'format_list' online %}">온라인</a></li>
+          <li><a class="nav-item nav-link" href="{% url 'format_list' 2%}">온라인</a></li>
+          {% endif %}
+          {% if format.key  == 3 %}
+          <li><a class="nav-item nav-link active" href="{% url 'format_list' 3 %}">온/오프라인</a></li>
+          {% else %}
+          <li><a class="nav-item nav-link" href="{% url 'format_list' 3 %}">온/오프라인</a></li>
           {% endif %}
 
 

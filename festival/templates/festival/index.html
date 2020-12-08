@@ -1592,7 +1592,7 @@
 					<section class="main items">
 						<article class="item">
 							<header>
-								<a href="#"><img src="../../static/img/pic01.jpg" alt="" /></a>
+								<a href="{% url 'category_list' 100 %}"><img src="../../static/img/pic01.jpg" alt="" /></a>
 								<h3>Category</h3>
 							</header>
 							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
@@ -1612,12 +1612,12 @@
 						</article>
 						<article class="item">
 							<header>
-								<a href="#"><img src="../../static/img/pic03.jpg" alt="" /></a>
+								<a href="{% url 'format_list' 1 %}"><img src="../../static/img/pic03.jpg" alt="" /></a>
 								<h3>Festival Format</h3>
 							</header>
 							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
 							<ul class="actions">
-								<li><a href="{% url 'format' %}" class="button">More</a></li>
+								<li><a href="{% url 'format_list' 1 %}" class="button">More</a></li>
 							</ul>
 						</article>
 						<article class="item">
