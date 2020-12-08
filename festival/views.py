@@ -50,3 +50,26 @@ def format_list(request, format_key):
     page_range = paginator.page_range[start_index:end_index]
 
     return render(request, 'festival/format_list.html',{'festival_all':festival_all, 'format':format, 'festivals':festivals, 'page_range':page_range, 'paginator':paginator })
+
+
+def location(request):
+    locations = FestivalRegion.objects.all()
+    return render(request, 'festival/location.html', {'locations':locations})
+
+def location_list(request, region_key):
+    location = get_object_or_404(FestivalRegion, region_key=region_key)
+    festival_all = Festival.objects.filter(region_key=region_key).all()
+    page_numbers_range = 9
+    # 한 페이지에 나올 게시글 수
+    paginator = Paginator(festival_all,page_numbers_range)
+    page = request.GET.get('page')
+    festivals = paginator.get_page(page)
+    current_page = int(page) if page else 1
+    start_index = int((current_page - 1) / page_numbers_range) * page_numbers_range
+    end_index = start_index + page_numbers_range
+    page_range = paginator.page_range[start_index:end_index]
+
+    return render(request, 'festival/location_list.html',{'festival_all':festival_all, 'location':location, 'festivals':festivals, 'page_range':page_range, 'paginator':paginator })
+
+
+    
