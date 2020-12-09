@@ -53,6 +53,12 @@
         background-color: grey;
         color: #ffffff;
     }
+
+    /* Pagination */
+    .pagination li.active a { 
+        color:#fff !important; background:grey!important; border-color:grey !important; 
+    }
+
 </style>
 
 <div class="container mt-5 pb-5" style="width: 50%">
@@ -74,8 +80,8 @@
 
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
-          {% if festivals.has_previous %}
-          <li class="page-item"> <a class="page-link" href="?page={{ festivals.previous_page_number }}"><span>&laquo;</span></a> </li>
+          {% if festival_all.has_previous %}
+          <li class="page-item"> <a class="page-link" href="?page={{ festival_all.previous_page_number }}"><span>&laquo;</span></a> </li>
           {% else %}
           <li class="page-item disabled"><a class="page-link" href="#"><span>&laquo;</span> </a> </li>
           {% endif %}
@@ -84,9 +90,9 @@
             <a class="page-link" href="?page={{ page }}"><span>{{ page }}</span></a>
           </li>
           {% endfor %}
-          {% if festivals.has_next %}
+          {% if festival_all.has_next %}
           <li class="page-item">
-              <a class="page-link" href="?page={{ festivals.next_page_number }}">
+              <a class="page-link" href="?page={{ festival_all.next_page_number }}">
                   <span>&raquo;</span>
               </a>
           </li>
