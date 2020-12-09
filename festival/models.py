@@ -127,7 +127,7 @@ def festival_number():
 
 class Festival(models.Model):
     festival_key = models.IntegerField(primary_key=True, unique=True, default=festival_number)
-    region_key = models.ForeignKey('FestivalRegion', models.DO_NOTHING, db_column='region_key')
+    region_key = models.ForeignKey('FestivalRegion', models.DO_NOTHING, db_column='region_key', related_name='regions')
     category_key = models.IntegerField()
     format_key = models.CharField(max_length=15)
     name = models.CharField(max_length=50)
