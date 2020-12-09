@@ -85,7 +85,7 @@ def festival_edit(request, festival_key):
         form = FestivalForm(request.POST, instance=festival)
         if form.is_valid():
             festival = form.save()
-            return redirect(index)
+            return redirect('/app/detail/'+str(festival.pk))
     else: 
         form = FestivalForm(instance=festival)
 
@@ -97,7 +97,7 @@ def new_festival(request):
         form = FestivalForm(request.POST)
         if form.is_valid():
             festival = form.save()
-            return redirect(index)
+            return redirect('/app/detail/'+str(festival.pk))
     else: 
         form = FestivalForm()
     return render(request, 'festival/new_festival.html', {'form':form})
