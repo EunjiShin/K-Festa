@@ -65,8 +65,8 @@
 
 <div class="container mt-5 pb-5" style="width: 60%">
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
-            {% for festival in festivals %}
-                {% if festival.category_key == category.category_key%}
+
+                {% for festival in festival_all %}
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap card" style="height: 500px; margin-bottom: 30px;">
                             {% if festival.image %}
@@ -79,7 +79,7 @@
                             <a href="{% url 'delete' festival.festival_key %}" class="button big" onclick="return confirm('정말로 삭제하시겠습니까?');">Delete</a>
                         </div>
                 </div>
-                {% endif %}
+
             {% endfor %}
     </div>
 
